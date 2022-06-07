@@ -92,7 +92,7 @@ class Author(models.Model):
     date_of_death = models.DateField('Died', null=True, blank=True)
 
     class Meta:
-        ordering = ['last_name', 'first_name'],
+        #ordering = ['last_name', 'first_name'],
         permissions = (("can_mark_returned", "Set book as returned"),)
 
     def get_absolute_url(self):
@@ -104,11 +104,11 @@ class Author(models.Model):
         return f'{self.last_name}, {self.first_name}'
 
 
-class Language(models.Model):
-    """Model representing a book language."""
-    name = models.CharField(max_length=200, help_text="Enter the book's natural language (e.g. English, French, Japanese, etc.)")
+#class Language(models.Model):
+    #"""Model representing a book language."""
+    #name = models.CharField(max_length=200, help_text="Enter the book's natural language (e.g. English, French, Japanese, etc.)")
 
-    def __str__(self):
-        """String for representing the Model object."""
-        return self.name
+    #def __str__(self):
+    #    """String for representing the Model object."""
+    #    return self.name
 
